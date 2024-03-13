@@ -1,95 +1,90 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import Game from "@/client/Game";
+
+const gameData = {
+  initial: {
+    main: "Two golden records, etched with the sounds of humanity, are sent into space on Voyager 1 and 2.",
+    value: "1977",
+  },
+  upcoming: [
+    {
+      main: "Pope Nicholas III creates the passetto di borgo, a hidden passage from the Vatican. It will help two popes escape invaders, perhaps saving their lives.",
+      value: "1277",
+    },
+    {
+      main: "Stanford and Berkeley play the first women’s intercollegiate basketball game. After the sport is banned, the players have a secret rematch.",
+      value: "1896",
+    },
+    {
+      main: "A wave of homo sapiens migrates out of Africa, becoming the ancestors of modern humans in Asia, Europe, the Americas and beyond.",
+      value: "60,000 BCE",
+    },
+    {
+      main: "Amelia Earhart, an aviator and fashion designer — who made her own line of practical clothing for women — attempts a round-the-world flight.",
+      value: "1937",
+    },
+    {
+      main: "One of the first great libraries in Assyria catches fire. Luckily, the clay tablets, including the “Epic of Gilgamesh,” harden in the heat and become preserved.",
+      value: "612 BCE",
+    },
+    {
+      main: "Alain Locke champions the creative and cosmopolitan Black Americans migrating to Harlem, highlighting a renaissance in a seminal essay.",
+      value: "1925",
+    },
+    {
+      main: "Running low on copper to produce coins, the Chinese government first issues paper money. It soon has to deal with inflation.",
+      value: "Circa 1024",
+    },
+    {
+      main: "The Neanderthals — who paint cave art, create jewelry and make tools like axes and spears — vanish from the earth.",
+      value: "40,000 BCE",
+    },
+  ],
+  correct: [
+    {
+      main: "A wave of homo sapiens migrates out of Africa, becoming the ancestors of modern humans in Asia, Europe, the Americas and beyond.",
+      value: "60,000 BCE",
+    },
+    {
+      main: "The Neanderthals — who paint cave art, create jewelry and make tools like axes and spears — vanish from the earth.",
+      value: "40,000 BCE",
+    },
+    {
+      main: "One of the first great libraries in Assyria catches fire. Luckily, the clay tablets, including the “Epic of Gilgamesh,” harden in the heat and become preserved.",
+      value: "612 BCE",
+    },
+    {
+      main: "Running low on copper to produce coins, the Chinese government first issues paper money. It soon has to deal with inflation.",
+      value: "Circa 1024",
+    },
+    {
+      main: "Pope Nicholas III creates the passetto di borgo, a hidden passage from the Vatican. It will help two popes escape invaders, perhaps saving their lives.",
+      value: "1277",
+    },
+    {
+      main: "Stanford and Berkeley play the first women’s intercollegiate basketball game. After the sport is banned, the players have a secret rematch.",
+      value: "1896",
+    },
+    {
+      main: "Alain Locke champions the creative and cosmopolitan Black Americans migrating to Harlem, highlighting a renaissance in a seminal essay.",
+      value: "1925",
+    },
+    {
+      main: "Amelia Earhart, an aviator and fashion designer — who made her own line of practical clothing for women — attempts a round-the-world flight.",
+      value: "1937",
+    },
+    {
+      main: "Two golden records, etched with the sounds of humanity, are sent into space on Voyager 1 and 2.",
+      value: "1977",
+    },
+  ],
+};
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <div>
+      <h1>Rank'em</h1>
+      <Game gameData={gameData} />
+    </div>
   );
 }
